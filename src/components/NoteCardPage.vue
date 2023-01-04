@@ -3,7 +3,7 @@
         <NoteCard :name="note.name" :text="note.text" />
         <div class="flex width-clamp gap-4 mt-4">
             <router-link :to="`/edit/${note._id}`" class="grow">
-                <button class="bg-yellow-300 w-full shadow-lg rounded-md p-2 text-center">
+              <button class="bg-yellow-300 w-full shadow-lg rounded-md p-2 text-center">
                     Edit
                 </button>
             </router-link>
@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         deleteNote() {
-            axios.delete(`http://localhost:3000/notes/${this.$route.params.id}`)
+            axios.delete(`http://localhost5000/notes/${this.$route.params.id}`)
                 .then(() => {
                     this.$router.push('/');
                 })
@@ -51,7 +51,7 @@ export default {
         }
     },
     created() {
-        axios.get(`http://localhost:3000/notes/${this.$route.params.id}`)
+        axios.get(`http://localhost5000/notes/${this.$route.params.id}`)
             .then((response) => {
                 this.note = response.data.data;
             })

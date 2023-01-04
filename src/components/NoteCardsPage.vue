@@ -6,6 +6,7 @@
   </div>
   <div class="flex flex-col items-center justify-center h-screen" v-else>
     <h1 class="text-4xl font-bold">No notes found</h1>
+    <NoteCard name="note.name" text="note.text" :editable="false" :new="false"/>
     <router-link to="/create">
       <button class="bg-yellow-300 shadow-lg rounded-md py-2 px-8 text-center mt-4">
         Create a note
@@ -29,7 +30,7 @@ export default {
     }
   },
   created() {
-    axios.get('http://localhost:3000/notes')
+    axios.get('http://localhost5000/notes')
       .then((response) => {
         this.notes = response.data.data;
       })

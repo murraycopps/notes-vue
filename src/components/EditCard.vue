@@ -31,7 +31,7 @@ export default {
         }
     },
     created() {
-        axios.get(`http://localhost:3000/notes/${this.$route.params.id}`)
+        axios.get(`http://localhost5000/notes/${this.$route.params.id}`)
             .then((response) => {
                 this.note = response.data.data;
             })

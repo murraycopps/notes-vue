@@ -60,7 +60,7 @@ export default {
     },
     submit() {
       if (this.editable && this.new) {
-        axios.post('http://localhost:3000/notes', {
+        axios.post('http://localhost5000/notes', {
           name: this.nameValue,
           text: this.textValue,
         }, {
@@ -76,7 +76,7 @@ export default {
             console.log(error);
           })
       } else if (this.editable) {
-        axios.put(`http://localhost:3000/notes/${this.$route.params.id}`, {
+        axios.put(`http://localhost5000/notes/${this.$route.params.id}`, {
           name: this.nameValue,
           text: this.textValue,
         }, {
